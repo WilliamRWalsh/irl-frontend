@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Skill from './skill/skill';
+import Skill from '../skill/skill';
+
+import './skills.scss'
 
 class Skills extends Component {
   state = {
@@ -30,9 +32,13 @@ class Skills extends Component {
   }
   render() {
     return (
-      <div>
-        {this.state.skills.map(skill => <Skill key={skill.id} skill={skill} />)}
-      </div>);
+      <React.Fragment>
+        <h3 className="skills-title">Skills</h3>
+        <div>
+          {this.state.skills.map(skill => <Skill key={skill.id} skill={skill} />)}
+        </div>
+      </React.Fragment>
+    );
   }
 }
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Quest from './quest/quest'
+import Quest from '../quest/quest'
 import { Accordion } from 'react-bootstrap'
+
+import './quests.scss';
 
 class Quests extends Component {
   state = {
@@ -22,16 +24,32 @@ class Quests extends Component {
       _id: 3,
       name: "Read a Book!",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim aliquam consectetur. Praesent quis placerat tortor, in semper dui. Phasellus at eleifend odio. Sed nec turpis congue, malesuada nulla in, ultrices orci. Nunc luctus vel ex vitae tempor. Mauris porta porta volutpat. Curabitur mollis nulla vel euismod condimentum. Nullam sed sagittis turpis. Morbi interdum posuere condimentum. Sed eros massa, suscipit non leo eget, tempus dictum leo.",
-      isCompleted: false,
+      isCompleted: true,
       xp: 15,
     }]
   }
+
+  handleCompleted = (quest) => {
+    const quests = [...this.state.quests]
+    const index = quests.indexOf(quest);
+    quests[index].isCompleted = true;
+    this.setState({ quests })
+  }
+
   render() {
 
     return (
-      <Accordion>
-        {this.state.quests.map(quest => <Quest key={quest} quest={quest} />)}
-      </Accordion>
+      <React.Fragment>
+        <h3 className="quests-title">Quests</h3>
+        <Accordion>
+          {this.state.quests.map(quest =>
+            <Quest
+              key={quest}
+              quest={quest}
+              onCompleted={this.handleCompleted}
+            />)}
+        </Accordion>
+      </React.Fragment>
     );
   }
 }
