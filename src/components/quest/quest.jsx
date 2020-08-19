@@ -18,7 +18,6 @@ class Quest extends Component {
   render() {
     return (
       <Card>
-
         <Card.Header>
           {this.renderQuestStatus()}
           <span >{this.props.quest.name}</span >
@@ -27,7 +26,6 @@ class Quest extends Component {
               <KeyboardArrowDownIcon />
             </Accordion.Toggle>
           </span >
-
         </Card.Header>
 
         <Accordion.Collapse eventKey={this.props.quest._id}>

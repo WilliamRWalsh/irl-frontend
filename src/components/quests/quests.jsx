@@ -18,7 +18,7 @@ class Quests extends Component {
       name: "Throw Around Some Heavy Junk",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dignissim aliquam consectetur. Praesent quis placerat tortor, in semper dui. Phasellus at eleifend odio. Sed nec turpis congue, malesuada nulla in, ultrices orci. Nunc luctus vel ex vitae tempor. Mauris porta porta volutpat. Curabitur mollis nulla vel euismod condimentum. Nullam sed sagittis turpis. Morbi interdum posuere condimentum. Sed eros massa, suscipit non leo eget, tempus dictum leo.",
       isCompleted: false,
-      xp: 15,
+      xp: 30,
     },
     {
       _id: 3,
