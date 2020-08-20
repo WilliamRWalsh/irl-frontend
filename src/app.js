@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-
+import { Route, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import Dashboard from "./components/dashboard/dashboard";
-import { Route, Link, Switch } from "react-router-dom";
 import Customize from "./components/customize/customize";
+import LoginForm from "./components/loginForm/loginForm";
 
 class App extends Component {
   render() {
@@ -24,10 +24,14 @@ class App extends Component {
                 <Link to="/customize">Quests</Link>
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link>
+              <Link to="/login">Login</Link>
+            </Nav.Link>
           </Nav>
         </Navbar>
 
         <Switch>
+          <Route path="/login" component={LoginForm} />
           <Route path="/customize" component={Customize} />
           <Route path="/" component={Dashboard} />
         </Switch>
