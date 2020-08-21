@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Quests from "../quests/quests";
 import Skills from "../skills/skills";
-import { Container, Row, Col } from "react-bootstrap";
+import FlipCard from "./../flipcard/flipcard";
 
 import "../../static/styles/index.scss";
 
@@ -17,7 +18,9 @@ class Dashboard extends Component {
           <Col xs={6}>
             <Quests />
           </Col>
-          <Col></Col>
+          <Col>
+            <FlipCard front={<Quests />} back={<Skills />} />
+          </Col>
         </Row>
       </Container>
     );

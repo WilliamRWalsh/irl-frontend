@@ -4,10 +4,25 @@ import { Form, Button, Card } from "react-bootstrap";
 class LoginForm extends Component {
   state = {
     account: { email: "", password: "" },
+    errors: {},
+  };
+
+  validateSubmit = () => {
+    const errors = {};
+
+    const { account } = this.state;
+    if (account.email.trim() === "") errors.email = "Email is required.";
+    if (account.password.trim() === "") errors.password = "Email is required.";
+
+    return Object.keys(errors).length === 0 ? null : errors;
   };
 
   handleSubmit = e => {
     e.preventDefault();
+
+    const errors = this.validateSubmit();
+    this.setState({ errors });
+    if (errors) return;
 
     /* Call BE */
   };
