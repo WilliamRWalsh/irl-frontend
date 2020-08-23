@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button, Card } from "react-bootstrap";
-import { Axios } from "axios";
+import { login } from "../../services/authService";
 
 class LoginForm extends Component {
   state = {
@@ -27,18 +27,8 @@ class LoginForm extends Component {
     if (errors) return;
 
     /* Call BE to log in */
-    try {
-      const response = await Axios.post(
-        "localhost:3000/api/auth/",
-        ...this.state.account
-      );
-      console.log(response);
-    } catch (ex) {
-      if (ex.response && ex.response.status === 400) {
-        const errors = { ...this.state.errors };
-        errors.username = ex.response.data;
-      }
-    }
+    const { account } = this.state;
+    await login(account.email, account.password);
   };
 
   handleChange = ({ currentTarget: input }) => {
