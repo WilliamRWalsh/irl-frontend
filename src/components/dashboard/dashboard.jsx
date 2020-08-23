@@ -18,9 +18,7 @@ class Dashboard extends Component {
           <Col xs={6}>
             <Quests />
           </Col>
-          <Col>
-            <FlipCard front={<Quests />} back={<Skills />} />
-          </Col>
+          <Col>{/* <FlipCard front={<Quests />} back={<Skills />} /> */}</Col>
         </Row>
       </Container>
     );

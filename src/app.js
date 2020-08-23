@@ -24,9 +24,7 @@ class App extends Component {
                 <Link to="/customize">Quests</Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link>
-              <Link to="/login">Login</Link>
-            </Nav.Link>
+            <Link to="/login">Login</Link>
           </Nav>
         </Navbar>
 

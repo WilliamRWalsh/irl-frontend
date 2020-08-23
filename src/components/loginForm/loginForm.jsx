@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button, Card } from "react-bootstrap";
+import { Axios } from "axios";
 
 class LoginForm extends Component {
   state = {
@@ -12,19 +13,32 @@ class LoginForm extends Component {
 
     const { account } = this.state;
     if (account.email.trim() === "") errors.email = "Email is required.";
-    if (account.password.trim() === "") errors.password = "Email is required.";
+    if (account.password.trim() === "")
+      errors.password = "Password is required.";
 
     return Object.keys(errors).length === 0 ? null : errors;
   };
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
 
     const errors = this.validateSubmit();
-    this.setState({ errors });
+    this.setState({ errors: errors || {} });
     if (errors) return;
 
-    /* Call BE */
+    /* Call BE to log in */
+    try {
+      const response = await Axios.post(
+        "localhost:3000/api/auth/",
+        ...this.state.account
+      );
+      console.log(response);
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        const errors = { ...this.state.errors };
+        errors.username = ex.response.data;
+      }
+    }
   };
 
   handleChange = ({ currentTarget: input }) => {
@@ -47,6 +61,11 @@ class LoginForm extends Component {
               placeholder="Enter email"
               autoFocus
             />
+            {this.state.errors.email && (
+              <div className="alert alert-danger">
+                {this.state.errors.email}
+              </div>
+            )}
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
