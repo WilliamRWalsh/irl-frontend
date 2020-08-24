@@ -13,19 +13,19 @@ const FlipCard = props => {
     <div>
       <button onClick={() => set(state => !state)}>Other side</button>
       <a.div
-        className="c back"
+        className="c front"
         style={{ opacity: opacity.interpolate(o => 1 - o), transform }}
       >
-        {props.back}
+        {props.front}
       </a.div>
       <a.div
-        className="c front"
+        className="c back"
         style={{
           opacity,
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),
         }}
       >
-        {props.front}
+        {props.back}
       </a.div>
     </div>
   );
