@@ -10,15 +10,16 @@ const FlipCard = props => {
     config: { mass: 10, tension: 500, friction: 80 },
   });
   return (
-    <div onClick={() => set(state => !state)}>
+    <div>
+      <button onClick={() => set(state => !state)}>Other side</button>
       <a.div
-        class="c back"
+        className="c back"
         style={{ opacity: opacity.interpolate(o => 1 - o), transform }}
       >
         {props.back}
       </a.div>
       <a.div
-        class="c front"
+        className="c front"
         style={{
           opacity,
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),

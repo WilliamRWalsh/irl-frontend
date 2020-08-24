@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button, Card } from "react-bootstrap";
-import { login } from "../../services/authService";
+import { login } from "../../../../services/authService";
 
 class LoginForm extends Component {
   state = {
@@ -12,9 +12,10 @@ class LoginForm extends Component {
     const errors = {};
 
     const { account } = this.state;
-    if (account.email.trim() === "") errors.email = "Email is required.";
+    if (account.email.trim() === "")
+      errors.email = "Character name is required.";
     if (account.password.trim() === "")
-      errors.password = "Password is required.";
+      errors.password = "Passkey is required.";
 
     return Object.keys(errors).length === 0 ? null : errors;
   };
@@ -39,7 +40,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Card>
+      <Card className="center">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="email">
             <Form.Label>Email address</Form.Label>
@@ -68,8 +69,9 @@ class LoginForm extends Component {
               placeholder="Password"
             />
           </Form.Group>
+
           <Button variant="primary" type="submit">
-            Submit
+            Login
           </Button>
         </Form>
       </Card>

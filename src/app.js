@@ -3,7 +3,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import Dashboard from "./components/dashboard/dashboard";
 import Customize from "./components/customize/customize";
-import LoginForm from "./components/loginForm/loginForm";
+import LoginPage from "./components/loginPage/loginPage";
 
 class App extends Component {
   render() {
@@ -29,7 +29,7 @@ class App extends Component {
         </Navbar>
 
         <Switch>
-          <Route path="/login" component={LoginForm} />
+          <Route path="/login" component={LoginPage} />
           <Route path="/customize" component={Customize} />
           <Route path="/" component={Dashboard} />
         </Switch>
