@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Form, Button, Card } from "react-bootstrap";
-import { login } from "../../../../services/authService";
 import Input from "./../../../common/input/input";
 import Joi from "joi-browser";
 import MyForm from "../../../common/form/form";
+import { register } from "./../../../../services/userService";
 
 class RegistartionForm extends MyForm {
   state = {
@@ -20,7 +20,7 @@ class RegistartionForm extends MyForm {
   doSubmit = async e => {
     /* Called at the end of Form.handleSubmit */
     const { data } = this.state;
-    // await login(data.email, data.password);
+    await register(data.email, data.password);
   };
 
   render() {

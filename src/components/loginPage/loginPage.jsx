@@ -12,15 +12,13 @@ class LoginPage extends Component {
       <React.Fragment>
         <Container>
           <Row className="main-content ">
-            <Col></Col>
             <Col>
-              <FlipCard
-                className="center "
-                front={<LoginForm />}
-                back={<RegistartionForm />}
-              />
+              <LoginForm />
             </Col>
-            <Col></Col>
+            <Col>{/* <FlipCard className="center " front={} back={} /> */}</Col>
+            <Col>
+              <RegistartionForm />
+            </Col>
           </Row>
         </Container>
       </React.Fragment>
