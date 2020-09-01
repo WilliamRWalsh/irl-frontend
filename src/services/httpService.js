@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getJWT } from "./jwtService";
 
 axios.interceptors.response.use(null, error => {
   const expectedError =
@@ -12,6 +13,13 @@ axios.interceptors.response.use(null, error => {
   }
 
   return Promise.reject(error);
+});
+
+axios.interceptors.request.use(config => {
+  const jwt = getJWT();
+  config.headers.Authorization = jwt ? jwt : "";
+
+  return config;
 });
 
 export default {

@@ -4,6 +4,7 @@ import { Accordion } from "react-bootstrap";
 
 import "./quests.scss";
 import Axios from "axios";
+import { getAllUsersQuests } from "../../services/questService";
 
 class Quests extends Component {
   state = {
@@ -35,10 +36,11 @@ class Quests extends Component {
     ],
   };
 
-  // async componentDidMount() {
-  //   const { data: quests } = await Axios.get("localhost:3000/quests");
-  //   this.setState({ quests });
-  // }
+  async componentDidMount() {
+    const quests = getAllUsersQuests();
+    console.log(quests);
+    // this.setState({ quests });
+  }
 
   handleCompleted = quest => {
     const quests = [...this.state.quests];

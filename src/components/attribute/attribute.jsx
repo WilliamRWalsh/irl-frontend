@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Attribute extends Component {
   render() {
-    return (<div>{this.props.attribute.name}</div>);
+    return <div>{this.props.attribute.name}</div>;
   }
 }
 
