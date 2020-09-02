@@ -1,30 +1,34 @@
-import React, { Component } from 'react';
-import { ProgressBar, Badge } from 'react-bootstrap'
+import React, { Component } from "react";
+import { ProgressBar, Badge } from "react-bootstrap";
 
-import './skill.scss'
+import "./skill.scss";
 
 class Skill extends Component {
-
   getBarPercentage() {
-    return this.props.skill.currentXP / this.props.skill.totalXP * 100;
+    return (this.props.skill.xp / this.props.skill.levelXp) * 100;
   }
 
   getBarColor() {
     if (this.props.skill.attributeRef === 1) {
-      return "danger"
+      return "danger";
     }
   }
 
   render() {
     return (
-
       <div className="skill-bar">
         <p>
-          <Badge variant="dark" className="level">Lvl. {this.props.skill.level}</Badge>
+          <Badge variant="dark" className="level">
+            Lvl. {this.props.skill.level}
+          </Badge>
           {this.props.skill.name}
         </p>
-        <ProgressBar variant={this.getBarColor()} now={this.getBarPercentage()} />
-      </div>);
+        <ProgressBar
+          variant={this.getBarColor()}
+          now={this.getBarPercentage()}
+        />
+      </div>
+    );
   }
 }
 

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { getJWT } from "./jwtService";
 
+axios.defaults.headers.common["x-auth-token"] = getJWT();
+
 axios.interceptors.response.use(null, error => {
   const expectedError =
     error.response &&
@@ -26,5 +28,6 @@ export default {
   get: axios.get,
   post: axios.post,
   put: axios.put,
+  patch: axios.patch,
   delete: axios.delete,
 };

@@ -4,8 +4,16 @@ import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import Dashboard from "./components/dashboard/dashboard";
 import Customize from "./components/customize/customize";
 import LoginPage from "./components/loginPage/loginPage";
+import { getCurrentUser } from "./services/jwtService";
 
 class App extends Component {
+  state = {};
+
+  componentDidMount() {
+    const user = getCurrentUser();
+    this.setState({ user });
+  }
+
   render() {
     return (
       <main>
@@ -26,6 +34,10 @@ class App extends Component {
             </NavDropdown>
             <Link to="/login">Login</Link>
           </Nav>
+          <h1>
+            {this.state.user && this.state.user.email}{" "}
+            {this.state.user && this.state.user._id}
+          </h1>
         </Navbar>
 
         <Switch>
