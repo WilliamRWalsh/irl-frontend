@@ -1,0 +1,26 @@
+.xp {
+  text-align: right !important;
+  color: green;
+  float: right;
+  .arrow {
+    color: black;
+  }
+}
+
+.complete-btn {
+  font-size: 8;
+  margin-right: 10px;
+  &:hover {
+    transform: scale(1.4);
+    box-shadow: 0px  25px 40px -5px rgba(#000, 0.3),
+      inset 0px   0px  0px  0px rgba(#ff0000, 0),
+      inset 0px -27px  0px  0pxrgba(#ff0000, 0);
+  }	
+  &.completed {
+    color: green;
+    transform: scale(1.4);
+  }
+}
+
+
+

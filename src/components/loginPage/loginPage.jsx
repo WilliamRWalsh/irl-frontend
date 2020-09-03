@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import LoginForm from "./components/login/loginForm";
-import FlipCard from "./../flipcard/flipcard";
+import LoginForm from "./components/loginForm";
+import RegistartionForm from "./components/registrationForm";
 import "./loginPage.scss";
-import RegistartionForm from "./components/registration/registrationForm";
 
 class LoginPage extends Component {
   state = {};

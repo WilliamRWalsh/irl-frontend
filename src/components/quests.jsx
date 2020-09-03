@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Quest from "../quest/quest";
+import Quest from "./quest";
 import { Accordion } from "react-bootstrap";
 
 import "./quests.scss";
-import { getAllUsersQuests, completeQuest } from "../../services/questService";
+import { getAllUsersQuests, completeQuest } from "../services/questService";
 
 class Quests extends Component {
   state = {};

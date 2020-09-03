@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Skill from "../skill/skill";
+import Skill from "./skill";
 
 import "./skills.scss";
-import { getAllUsersSkills } from "../../services/skillService";
+import { getAllUsersSkills } from "../services/skillService";
 
 class Skills extends Component {
   state = {};
