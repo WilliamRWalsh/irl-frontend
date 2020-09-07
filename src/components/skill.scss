@@ -7,4 +7,7 @@
   .level {
     margin-right: 10px;
   }
+  .no-transition .progress-bar {
+    transition: none;
+  }
 }

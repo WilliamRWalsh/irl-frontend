@@ -24,6 +24,7 @@ class Skill extends Component {
           {this.props.skill.name}
         </p>
         <ProgressBar
+          className={this.props.rollover ? "no-transition" : ""}
           variant={this.getBarColor()}
           now={this.getBarPercentage()}
         />
