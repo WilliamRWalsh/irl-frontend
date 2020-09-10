@@ -3,9 +3,9 @@ import { Form, Button, Card } from "react-bootstrap";
 import { login } from "../../../services/authService";
 import Input from "../../common/input";
 import Joi from "joi-browser";
-import MyForm from "../../common/form";
+import FormComponent from "../../common/form";
 
-class LoginForm extends MyForm {
+class LoginForm extends FormComponent {
   state = {
     data: { email: "", password: "" },
     errors: {},

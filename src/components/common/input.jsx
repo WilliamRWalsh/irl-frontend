@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 
 const Input = ({
   name,
+  type,
   label,
   value,
   onChange,
@@ -19,7 +20,7 @@ const Input = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        type="text"
+        type={type || "text"}
         autoFocus={isAutoFocused}
       />
       {error && <div className="alert alert-danger">{error}</div>}

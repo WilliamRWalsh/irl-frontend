@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Joi from "joi-browser";
 
-class Form extends Component {
+class FormComponent extends Component {
   state = {
     data: {},
     errors: {},
@@ -48,4 +48,4 @@ class Form extends Component {
   };
 }
 
-export default Form;
+export default FormComponent;

@@ -2,10 +2,10 @@ import React from "react";
 import { Form, Button, Card } from "react-bootstrap";
 import Input from "../../common/input";
 import Joi from "joi-browser";
-import MyForm from "../../common/form";
+import FormComponent from "../../common/form";
 import { register } from "../../../services/userService";
 
-class RegistartionForm extends MyForm {
+class RegistartionForm extends FormComponent {
   state = {
     data: { email: "", password: "" },
     errors: {},
