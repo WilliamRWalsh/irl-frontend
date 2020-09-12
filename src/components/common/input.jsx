@@ -18,7 +18,6 @@ const Input = ({
     <Form.Group controlId={name}>
       <Form.Label>{label}</Form.Label>
       <Form.Control
-        id={name}
         name={name}
         value={value}
         onChange={onChange}

@@ -8,7 +8,7 @@ import { createTemplate } from "../services/templateService";
 
 class TemplateForm extends FormComponent {
   state = {
-    data: { name: null, description: null, xp: 15, skill: null },
+    data: { name: "", description: "", xp: 15, skill: null },
     errors: {},
   };
 
@@ -39,6 +39,7 @@ class TemplateForm extends FormComponent {
         <Form onSubmit={this.handleSubmit}>
           <Input
             name="name"
+            label="Quest Name"
             value={data.name}
             onChange={this.handleChange}
             error={errors.name}
@@ -46,12 +47,14 @@ class TemplateForm extends FormComponent {
           />
           <Input
             name="description"
+            label="Description"
             value={data.description}
             onChange={this.handleChange}
             error={errors.description}
           />
           <Input
             name="xp"
+            label="Experience Points"
             type="range"
             min={5}
             max={25}
@@ -60,10 +63,14 @@ class TemplateForm extends FormComponent {
             onChange={this.handleChange}
             error={errors.xp}
           />
+          <div>
+            <Form.Label>Skill</Form.Label>
+          </div>
           <ButtonGroup>
             {this.props.skills &&
               this.props.skills.map(skill => (
                 <SkillOption
+                  key={skill._id}
                   skill={skill}
                   onClick={this.handleSkillOptionClick}
                 />
