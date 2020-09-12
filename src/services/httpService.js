@@ -1,9 +1,15 @@
 import axios from "axios";
-import { getJWT } from "./jwtService";
+import { getJWT, setJWT } from "./jwtService";
 
-axios.defaults.headers.common["x-auth-token"] = getJWT();
+axios.defaults.headers.common["Authorization"] = getJWT();
 
-axios.interceptors.response.use(null, error => {
+const responseSuccess = data => {
+  const jwt = data.headers["authorization"];
+  if (jwt) setJWT(jwt);
+  return Promise.resolve(data);
+};
+
+const responseError = error => {
   const expectedError =
     error.response &&
     error.response.status >= 400 &&
@@ -15,14 +21,9 @@ axios.interceptors.response.use(null, error => {
   }
 
   return Promise.reject(error);
-});
+};
 
-axios.interceptors.request.use(config => {
-  const jwt = getJWT();
-  config.headers.Authorization = jwt ? jwt : "";
-
-  return config;
-});
+axios.interceptors.response.use(responseSuccess, responseError);
 
 export default {
   get: axios.get,
