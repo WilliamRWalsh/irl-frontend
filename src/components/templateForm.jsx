@@ -8,13 +8,13 @@ import { createTemplate } from "../services/templateService";
 
 class TemplateForm extends FormComponent {
   state = {
-    data: { name: "", description: "", xp: 15, skill: null },
+    data: { name: null, description: null, xp: 15, skill: null },
     errors: {},
   };
 
   schema = {
-    name: Joi.string().min(2).max(128).required().label("Quest Name"),
-    description: Joi.string().min(2).max(2024).label("Details"),
+    name: Joi.string().required().label("Quest Name"),
+    description: Joi.string().label("Details"),
     xp: Joi.number().required().min(5).max(25).label("Experience Points"),
     skill: Joi.string().required().label("Skill"),
   };
@@ -53,9 +53,12 @@ class TemplateForm extends FormComponent {
           <Input
             name="xp"
             type="range"
+            min={5}
+            max={25}
+            step={5}
             value={data.xp}
             onChange={this.handleChange}
-            error={errors.description}
+            error={errors.xp}
           />
           <ButtonGroup>
             {this.props.skills &&

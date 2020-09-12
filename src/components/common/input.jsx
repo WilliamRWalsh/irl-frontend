@@ -10,6 +10,9 @@ const Input = ({
   placeholder,
   error,
   isAutoFocused,
+  min,
+  max,
+  step,
 }) => {
   return (
     <Form.Group controlId={name}>
@@ -22,6 +25,9 @@ const Input = ({
         placeholder={placeholder}
         type={type || "text"}
         autoFocus={isAutoFocused}
+        min={min}
+        max={max}
+        step={step}
       />
       {error && <div className="alert alert-danger">{error}</div>}
     </Form.Group>
