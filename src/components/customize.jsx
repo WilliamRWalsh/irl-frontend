@@ -6,6 +6,7 @@ import { getAllUsersSkills } from "../services/skillService";
 import {
   getAllUserTemplates,
   updateTemplate,
+  deleteTemplate,
 } from "../services/templateService";
 
 class Customize extends Component {
@@ -30,6 +31,17 @@ class Customize extends Component {
     updateTemplate(updatedTemplate);
   };
 
+  handleDeleteTemplate = template => {
+    // Update template state to active or inactive
+    const templates = [...this.state.templates];
+    const index = templates.indexOf(template);
+    templates.splice(index, 1);
+
+    this.setState({ templates });
+
+    deleteTemplate(template);
+  };
+
   render() {
     return (
       <Container>
@@ -39,6 +51,7 @@ class Customize extends Component {
             <Templates
               templates={this.state.templates}
               onIsActiveChange={this.handleIsActiveChange}
+              onDeleteTemplate={this.handleDeleteTemplate}
             />
           </Col>
           <Col>

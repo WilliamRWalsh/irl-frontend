@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Accordion, Card, Badge } from "react-bootstrap";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import { Card } from "react-bootstrap";
+import ClearIcon from "@material-ui/icons/Clear";
 import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
-import "./quest.scss";
+import "./template.scss";
 
 class Template extends Component {
   renderTemplateStatus() {
@@ -31,19 +31,13 @@ class Template extends Component {
           <span>{this.props.template.name}</span>
           <span className="xp">
             {this.props.template.xp} XP
-            <Accordion.Toggle
-              className="arrow"
-              as={Badge}
-              eventKey={this.props.template._id}
+            <btn
+              onClick={() => this.props.onDeleteTemplate(this.props.template)}
             >
-              <KeyboardArrowDownIcon />
-            </Accordion.Toggle>
+              <ClearIcon className="delete-x" />
+            </btn>
           </span>
         </Card.Header>
-
-        <Accordion.Collapse eventKey={this.props.template._id}>
-          <Card.Body>{this.props.template.description}</Card.Body>
-        </Accordion.Collapse>
       </Card>
     );
   }

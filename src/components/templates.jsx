@@ -18,6 +18,7 @@ class Templates extends Component {
                 key={template._id}
                 template={template}
                 onIsActiveChange={this.props.onIsActiveChange}
+                onDeleteTemplate={this.props.onDeleteTemplate}
               />
             ))}
         </Accordion>

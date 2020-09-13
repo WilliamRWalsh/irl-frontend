@@ -17,3 +17,8 @@ export async function updateTemplate(template) {
   const { data } = await http.patch(apiEndpoint + template._id, template);
   return data;
 }
+
+export async function deleteTemplate(template) {
+  const { data } = await http.delete(apiEndpoint + template._id);
+  return data;
+}
