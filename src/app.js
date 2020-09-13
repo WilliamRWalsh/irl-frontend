@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import { Navbar, NavDropdown, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import Dashboard from "./components/dashboard";
 import Customize from "./components/customize";
 import LoginPage from "./components/loginPage/loginPage";
@@ -27,13 +27,10 @@ class App extends Component {
             <Link to="/">IRL</Link>
           </Navbar.Brand>
           <Nav className="mr-auto">
-            <NavDropdown title="Customize" id="customize-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/customize">Quests</Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Link to="/customize">Customize</Link>
             <Link to="/login">Login</Link>
           </Nav>
+
           <h1>
             {this.state.user && this.state.user.email}{" "}
             {this.state.user && this.state.user._id}

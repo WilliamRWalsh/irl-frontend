@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'DnD';
+  font-family: "DnD";
   src: url(../fonts/DUNGRG__.TTF);
 }
 
- body {
-  background: url(../images/old-paper.jpg) no-repeat center center fixed; 
+body {
+  background: url(../images/wood-large.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,6 +13,6 @@
 
 .main-content {
   margin: 45px 0 0 0 !important;
-  font-family: 'DnD', sans-serif;
+  font-family: "DnD", sans-serif;
   font-size: 28px;
 }

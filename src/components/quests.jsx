@@ -17,6 +17,7 @@ class Quests extends Component {
               <Quest
                 key={quest._id}
                 quest={quest}
+                skillColor={"red"}
                 onCompleted={this.props.onCompleted}
               />
             ))}
