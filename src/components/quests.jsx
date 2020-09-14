@@ -10,7 +10,7 @@ class Quests extends Component {
   render() {
     return (
       <React.Fragment>
-        <h3 className="quests-title">Quests</h3>
+        <h3 className="title">Quests</h3>
         <Accordion>
           {this.props.quests &&
             this.props.quests.map(quest => (

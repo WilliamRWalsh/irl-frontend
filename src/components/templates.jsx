@@ -10,7 +10,7 @@ class Templates extends Component {
   render() {
     return (
       <React.Fragment>
-        <h3 className="quests-title">Quest Options</h3>
+        <h3 className="title">Quest Options</h3>
         <Accordion>
           {this.props.templates &&
             this.props.templates.map(template => (

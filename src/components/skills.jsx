@@ -9,7 +9,7 @@ class Skills extends Component {
   render() {
     return (
       <React.Fragment>
-        <h3 className="skills-title">Skills</h3>
+        <h3 className="title">Skills</h3>
         <div>
           {this.props.skills &&
             this.props.skills.map(skill => (

@@ -8,6 +8,7 @@ import {
   updateTemplate,
   deleteTemplate,
 } from "../services/templateService";
+import SkillsEdit from "./skillsEdit";
 
 class Customize extends Component {
   state = {};
@@ -46,7 +47,9 @@ class Customize extends Component {
     return (
       <Container>
         <Row className="main-content">
-          <Col></Col>
+          <Col>
+            <SkillsEdit skills={this.state.skills}></SkillsEdit>
+          </Col>
           <Col xs={6}>
             <Templates
               templates={this.state.templates}
