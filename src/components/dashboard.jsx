@@ -6,6 +6,7 @@ import { getAllUsersQuests, completeQuest } from "../services/questService";
 import { getAllUsersSkills } from "../services/skillService";
 
 import "../static/styles/index.scss";
+import "./dashboard.scss";
 
 class Dashboard extends Component {
   state = {};
@@ -59,20 +60,25 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <Container>
-        <Row className="main-content">
-          <Col>
-            <Skills skills={this.state.skills} rollover={this.state.rollover} />
-          </Col>
-          <Col xs={6}>
-            <Quests
-              quests={this.state.quests}
-              onCompleted={this.handleCompleted}
-            />
-          </Col>
-          <Col>{/* <FlipCard front={<Quests />} back={<Skills />} /> */}</Col>
-        </Row>
-      </Container>
+      <div className="sheet">
+        <Container>
+          <Row className="main-content">
+            <Col>
+              <Skills
+                skills={this.state.skills}
+                rollover={this.state.rollover}
+              />
+            </Col>
+            <Col xs={6}>
+              <Quests
+                quests={this.state.quests}
+                onCompleted={this.handleCompleted}
+              />
+            </Col>
+            <Col>{/* <FlipCard front={<Quests />} back={<Skills />} /> */}</Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

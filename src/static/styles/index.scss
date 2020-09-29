@@ -4,11 +4,11 @@
 }
 
 body {
-  background: url(../images/wood-large.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url(../images/wood-large.jpg) no-repeat center 0;
+}
+.move-up-background {
+  animation-fill-mode: forwards;
+  animation: moveUpAnim 2.5s linear forwards;
 }
 
 .main-content {
@@ -19,4 +19,29 @@ body {
 
 .title {
   color: white;
+}
+
+@keyframes moveUpAnim {
+  0% {
+    background-position: center 0;
+  }
+
+  100% {
+    background-position: center -1000px;
+  }
+}
+
+.move-up {
+  animation: moveUpElementAnim 2.5s linear forwards;
+  position: relative;
+}
+
+@keyframes moveUpElementAnim {
+  0% {
+    bottom: 0;
+  }
+
+  100% {
+    bottom: 1000px;
+  }
 }

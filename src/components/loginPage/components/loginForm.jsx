@@ -9,6 +9,7 @@ class LoginForm extends FormComponent {
   state = {
     data: { email: "", password: "" },
     errors: {},
+    isLoggedIn: false,
   };
 
   schema = {
@@ -16,17 +17,23 @@ class LoginForm extends FormComponent {
     password: Joi.string().required().label("Passkey"),
   };
 
+  moveUp() {}
+
   doSubmit = async e => {
     /* Called at the end of Form.handleSubmit */
     const { data } = this.state;
     await login(data.email, data.password);
+
+    document.body.classList.add("move-up-background");
+    const isLoggedIn = true;
+    this.setState({ isLoggedIn });
   };
 
   render() {
     const { data, errors } = this.state;
 
     return (
-      <Card className="center">
+      <Card className={this.state.isLoggedIn ? "move-up center" : "center"}>
         <Form onSubmit={this.handleSubmit}>
           <Input
             name="email"

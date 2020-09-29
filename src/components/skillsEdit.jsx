@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import Skill from "./skill";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import AddSkillForm from "./addSkillForm";
 
 import "./skillsEdit.scss";
 import { Card } from "react-bootstrap";
 
 class SkillsEdit extends Component {
   state = {};
+
+  handleAddSkill = () => {
+    const addForm = true;
+    this.setState({ addForm });
+  };
 
   render() {
     return (
@@ -23,7 +29,8 @@ class SkillsEdit extends Component {
               />
             ))}
         </div>
-        <Card className="card-add-skill">
+        {this.state.addForm && <AddSkillForm />}
+        <Card onClick={this.handleAddSkill} className="card-add-skill">
           <AddCircleOutlineIcon className="btn-add-skill" />
         </Card>
       </React.Fragment>
