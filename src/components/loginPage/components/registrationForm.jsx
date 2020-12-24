@@ -36,6 +36,7 @@ class RegistartionForm extends FormComponent {
             error={errors.email}
             placeholder="Email"
             isAutoFocused={false}
+            disabled={this.props.disabled}
           />
 
           <Input
@@ -44,6 +45,7 @@ class RegistartionForm extends FormComponent {
             onChange={this.handleChange}
             error={errors.password}
             placeholder="Passkey"
+            disabled={this.props.disabled}
           />
 
           <Input
@@ -52,6 +54,7 @@ class RegistartionForm extends FormComponent {
             onChange={this.handleChange}
             error={errors.passwordConfirm}
             placeholder="Confirm Passkey"
+            disabled={this.props.disabled}
           />
 
           <Button variant="primary" type="submit">

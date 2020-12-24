@@ -13,6 +13,7 @@ const Input = ({
   min,
   max,
   step,
+  disabled,
 }) => {
   return (
     <Form.Group controlId={name}>
@@ -27,6 +28,7 @@ const Input = ({
         min={min}
         max={max}
         step={step}
+        disabled={disabled}
       />
       {error && <div className="alert alert-danger">{error}</div>}
     </Form.Group>

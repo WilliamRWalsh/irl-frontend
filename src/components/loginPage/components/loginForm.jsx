@@ -42,6 +42,7 @@ class LoginForm extends FormComponent {
             error={errors.email}
             placeholder="Email"
             isAutoFocused={true}
+            disabled={this.props.disabled}
           />
 
           <Input
@@ -50,6 +51,7 @@ class LoginForm extends FormComponent {
             onChange={this.handleChange}
             error={errors.password}
             placeholder="Passkey"
+            disabled={this.props.disabled}
           />
 
           <Button variant="primary" type="submit">

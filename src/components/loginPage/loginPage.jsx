@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import LoginForm from "./components/loginForm";
 import RegistartionForm from "./components/registrationForm";
 import "./loginPage.scss";
+import FlipCard from './../flipcard';
 
 class LoginPage extends Component {
   state = {};
@@ -12,11 +13,11 @@ class LoginPage extends Component {
         <Container>
           <Row className="main-content ">
             <Col>
-              <LoginForm />
+              {/* <LoginForm /> */}
             </Col>
-            <Col>{/* <FlipCard className="center " front={} back={} /> */}</Col>
+            <Col>{ <FlipCard className="center" front={<LoginForm />} back={<RegistartionForm />} /> }</Col>
             <Col>
-              <RegistartionForm />
+              {/* <RegistartionForm /> */}
             </Col>
           </Row>
         </Container>
