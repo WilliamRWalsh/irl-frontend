@@ -4,6 +4,7 @@ import { login } from "../../../services/authService";
 import Input from "../../common/input";
 import Joi from "joi-browser";
 import FormComponent from "../../common/form";
+import "./loginForm.scss";
 
 class LoginForm extends FormComponent {
   state = {
@@ -33,8 +34,11 @@ class LoginForm extends FormComponent {
     const { data, errors } = this.state;
 
     return (
-      <Card className={this.state.isLoggedIn ? "move-up center" : "center"}>
+      <Card className="filled">
+        <div className="logo"/>
+
         <Form onSubmit={this.handleSubmit}>
+          
           <Input
             name="email"
             value={data.email}
@@ -43,6 +47,7 @@ class LoginForm extends FormComponent {
             placeholder="Email"
             isAutoFocused={true}
             disabled={this.props.disabled}
+            className="inputs"
           />
 
           <Input
@@ -52,15 +57,18 @@ class LoginForm extends FormComponent {
             error={errors.password}
             placeholder="Passkey"
             disabled={this.props.disabled}
+            className="inputs"
           />
-
-          <Button variant="primary" type="submit">
-            Login
-          </Button>
+          <div className="login-reg-wrapper">
+            <Button variant="primary" type="submit" className="login-reg-btn">
+              Login
+            </Button>
+          </div>
         </Form>
       </Card>
     );
   }
 }
+/* <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
 
 export default LoginForm;

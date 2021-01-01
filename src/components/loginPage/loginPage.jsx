@@ -15,7 +15,7 @@ class LoginPage extends Component {
             <Col>
               {/* <LoginForm /> */}
             </Col>
-            <Col>{ <FlipCard className="center" front={<LoginForm />} back={<RegistartionForm />} /> }</Col>
+            <Col>{ <FlipCard front={<LoginForm />} back={<RegistartionForm />} /> }</Col>
             <Col>
               {/* <RegistartionForm /> */}
             </Col>

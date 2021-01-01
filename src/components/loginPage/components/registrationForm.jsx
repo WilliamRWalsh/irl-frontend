@@ -27,7 +27,7 @@ class RegistartionForm extends FormComponent {
     const { data, errors } = this.state;
 
     return (
-      <Card className="center">
+      <Card>
         <Form onSubmit={this.handleSubmit}>
           <Input
             name="email"
