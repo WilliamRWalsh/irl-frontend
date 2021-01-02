@@ -14,7 +14,7 @@ const Input = ({
   max,
   step,
   disabled,
-  className
+  className,
 }) => {
   return (
     <Form.Group controlId={name}>

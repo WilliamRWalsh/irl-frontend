@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import LoginForm from "./components/loginForm";
 import RegistartionForm from "./components/registrationForm";
-import "./loginPage.scss";
-import FlipCard from './../flipcard';
+import FlipCard from "./components/flipcard";
 
 class LoginPage extends Component {
   state = {};
@@ -12,13 +11,11 @@ class LoginPage extends Component {
       <React.Fragment>
         <Container>
           <Row className="main-content ">
+            <Col>{/* <LoginForm /> */}</Col>
             <Col>
-              {/* <LoginForm /> */}
+              {<FlipCard front={<LoginForm />} back={<RegistartionForm />} />}
             </Col>
-            <Col>{ <FlipCard front={<LoginForm />} back={<RegistartionForm />} /> }</Col>
-            <Col>
-              {/* <RegistartionForm /> */}
-            </Col>
+            <Col>{/* <RegistartionForm /> */}</Col>
           </Row>
         </Container>
       </React.Fragment>

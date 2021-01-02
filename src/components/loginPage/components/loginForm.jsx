@@ -35,10 +35,9 @@ class LoginForm extends FormComponent {
 
     return (
       <Card className="filled">
-        <div className="logo"/>
+        <div className="logo" />
 
         <Form onSubmit={this.handleSubmit}>
-          
           <Input
             name="email"
             value={data.email}
@@ -55,7 +54,7 @@ class LoginForm extends FormComponent {
             value={data.password}
             onChange={this.handleChange}
             error={errors.password}
-            placeholder="Passkey"
+            placeholder="Password"
             disabled={this.props.disabled}
             className="inputs"
           />
@@ -64,6 +63,9 @@ class LoginForm extends FormComponent {
               Login
             </Button>
           </div>
+          <a className="flip-btn" onClick={() => this.props.onFlip()}>
+            Need to registration?
+          </a>
         </Form>
       </Card>
     );

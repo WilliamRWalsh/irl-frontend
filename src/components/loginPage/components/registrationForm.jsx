@@ -60,6 +60,8 @@ class RegistartionForm extends FormComponent {
           <Button variant="primary" type="submit">
             Register
           </Button>
+
+          <a onClick={() => this.props.onFlip()}>Login?</a>
         </Form>
       </Card>
     );

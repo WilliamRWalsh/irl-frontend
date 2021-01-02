@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useSpring, animated as a } from "react-spring";
 import "./flipcard.scss";
 
+const handleFlip = set => {
+  return set(state => !state);
+};
+
 const FlipCard = props => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -15,26 +19,35 @@ const FlipCard = props => {
 
   return (
     <div>
-      <button onClick={() => set(state => !state)}>Other side</button>
       <a.div
         className="c"
         style={{
           opacity: opacity.interpolate(o => 1 - o),
           transform,
-          zIndex: zIndexFront
+          zIndex: zIndexFront,
         }}
       >
-        {React.cloneElement(props.front, { disabled: flipped })}
+        {React.cloneElement(props.front, {
+          disabled: flipped,
+          onFlip: () => {
+            set(state => !state);
+          },
+        })}
       </a.div>
       <a.div
         className="c"
         style={{
           opacity,
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),
-          zIndex: zIndexBack
+          zIndex: zIndexBack,
         }}
       >
-        {React.cloneElement(props.back, { disabled: !flipped })}
+        {React.cloneElement(props.back, {
+          disabled: !flipped,
+          onFlip: () => {
+            set(state => !state);
+          },
+        })}
       </a.div>
     </div>
   );
