@@ -20,7 +20,7 @@ const FlipCard = props => {
   return (
     <div>
       <a.div
-        className="c"
+        className="flip-card"
         style={{
           opacity: opacity.interpolate(o => 1 - o),
           transform,
@@ -35,7 +35,7 @@ const FlipCard = props => {
         })}
       </a.div>
       <a.div
-        className="c"
+        className="flip-card"
         style={{
           opacity,
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),

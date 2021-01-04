@@ -34,10 +34,10 @@ class LoginForm extends FormComponent {
     const { data, errors } = this.state;
 
     return (
-      <Card className="filled">
+      <Card className="rl-card">
         <div className="logo" />
 
-        <Form onSubmit={this.handleSubmit}>
+        <Form className="login-form" onSubmit={this.handleSubmit}>
           <Input
             name="email"
             value={data.email}
@@ -63,10 +63,10 @@ class LoginForm extends FormComponent {
               Login
             </Button>
           </div>
-          <a className="flip-btn" onClick={() => this.props.onFlip()}>
-            Need to registration?
-          </a>
         </Form>
+        <a className="flip-btn" onClick={() => this.props.onFlip()}>
+          Need to register?
+        </a>
       </Card>
     );
   }

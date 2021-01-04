@@ -11,6 +11,7 @@
 }
 
 .login-reg-wrapper {
+  margin-top: 10px;
   padding-top: 30px;
   display: flex;
   align-items: center;
@@ -18,7 +19,6 @@
 }
 
 .login-reg-btn {
-  padding-top: 20px;
   width: 40%;
 }
 
@@ -28,8 +28,9 @@
   font-family: sans-serif;
 }
 
-.form-group {
+.reg-form .form-group {
   margin-bottom: 0 !important;
+  height: 55px !important;
 }
 
 .flip-btn {
