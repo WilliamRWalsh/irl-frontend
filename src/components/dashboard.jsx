@@ -63,7 +63,7 @@ class Dashboard extends Component {
       <div className="sheet">
         <Container>
           <Row className="main-content">
-            <Col>
+            <Col xs={3}>
               <Skills
                 skills={this.state.skills}
                 rollover={this.state.rollover}
@@ -75,7 +75,7 @@ class Dashboard extends Component {
                 onCompleted={this.handleCompleted}
               />
             </Col>
-            <Col>{/* <FlipCard front={<Quests />} back={<Skills />} /> */}</Col>
+            <Col xs={2}></Col>
           </Row>
         </Container>
       </div>
