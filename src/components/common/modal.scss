@@ -1,0 +1,29 @@
+.centered-modal {
+  // width: 80%;
+
+  // margin: auto;
+  // align-self: center;
+
+  .modal-title {
+    display: flex;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .body-text {
+    display: flex;
+    // height: 10%;
+    padding: 5% 10% 2% 10%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    display: flex;
+    // height: 10%;
+    // padding: 5% 10% 2% 10%;
+    align-items: center;
+    justify-content: center;
+  }
+}
