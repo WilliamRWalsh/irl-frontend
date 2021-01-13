@@ -1,17 +1,13 @@
+import { green } from "@material-ui/core/colors";
 import React, { Component } from "react";
 import { ProgressBar, Badge } from "react-bootstrap";
+import getVariantColor from "../utils/color";
 
 import "./skill.scss";
 
 class Skill extends Component {
   getBarPercentage() {
     return (this.props.skill.xp / this.props.skill.levelXp) * 100;
-  }
-
-  getBarColor() {
-    if (this.props.skill.attributeRef === 1) {
-      return "danger";
-    }
   }
 
   render() {
@@ -25,7 +21,7 @@ class Skill extends Component {
         </p>
         <ProgressBar
           className={this.props.rollover ? "no-transition" : ""}
-          variant={this.getBarColor()}
+          variant={getVariantColor(this.props.skill.color)}
           now={this.getBarPercentage()}
         />
       </div>
