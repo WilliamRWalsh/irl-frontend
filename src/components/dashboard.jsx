@@ -4,7 +4,7 @@ import Quests from "./quests";
 import Skills from "./skills";
 import { getAllUsersQuests, completeQuest } from "../services/questService";
 import { getAllUsersSkills } from "../services/skillService";
-import CenteredModal from "./common/modal";
+import StartUp from "./startup";
 import "../static/styles/index.scss";
 import "./dashboard.scss";
 
@@ -78,7 +78,7 @@ class Dashboard extends Component {
             <Col xs={2}></Col>
           </Row>
           <Row>
-            <CenteredModal />
+            <StartUp></StartUp>
           </Row>
         </Container>
       </div>
