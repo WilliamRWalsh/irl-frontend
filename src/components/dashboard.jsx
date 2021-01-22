@@ -4,7 +4,7 @@ import Quests from "./quests";
 import Skills from "./skills";
 import { getAllUsersQuests, completeQuest } from "../services/questService";
 import { getAllUsersSkills } from "../services/skillService";
-import StartUp from "./startup";
+import StartUp from "./startUpPage/startup";
 import "../static/styles/index.scss";
 import "./dashboard.scss";
 

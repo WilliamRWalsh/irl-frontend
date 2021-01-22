@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Skill from "./skill";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import AddSkillForm from "./addSkillForm";
+import AddSkillForm from "./common/addSkillForm";
 
 import "./skillsEdit.scss";
 import { Card } from "react-bootstrap";
