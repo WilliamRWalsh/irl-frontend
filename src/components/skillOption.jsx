@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import getVariantColor from "../utils/color";
+import { getVariantColor } from "../utils/color";
 
 const SkillOption = ({ skill, onClick }) => {
   return (

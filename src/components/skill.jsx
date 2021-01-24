@@ -1,7 +1,7 @@
 import { green } from "@material-ui/core/colors";
 import React, { Component } from "react";
 import { ProgressBar, Badge } from "react-bootstrap";
-import getVariantColor from "../utils/color";
+import { getVariantColor } from "../utils/color";
 
 import "./skill.scss";
 

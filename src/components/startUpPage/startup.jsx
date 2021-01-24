@@ -14,13 +14,6 @@ class StartUp extends Component {
     totalSteps: 3,
   };
 
-  // formSkill = ({ data, errors }) => {};
-
-  // setSkill = ({ name, color }) => {
-  //   this.setState({ skill: { name, color } });
-  //   // await createSkill(data);
-  // };
-
   addStepCounter = () => {
     /* Will close modal when totalSteps reached */
 
@@ -32,18 +25,21 @@ class StartUp extends Component {
     this.setState({ step });
   };
 
-  handleOnClickBegin = () => {
+  handleOnClick = skill => {
+    if (skill) this.setState({ skill });
     this.addStepCounter();
   };
 
   renderComponent = () => {
     switch (this.state.step) {
       case 0:
-        return <Welcome onClickBegin={this.handleOnClickBegin} />;
+        return <Welcome onClick={this.handleOnClick} />;
       case 1:
-        return <PickSkill onClickBegin={this.handleOnClickBegin} />;
+        return <PickSkill onClick={this.handleOnClick} />;
       case 2:
-        return <PickQuest onClickBegin={this.handleOnClickBegin} />;
+        return (
+          <PickQuest skill={this.state.skill} onClick={this.handleOnClick} />
+        );
     }
   };
 

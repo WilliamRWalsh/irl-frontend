@@ -30,7 +30,10 @@ class FormComponent extends Component {
 
     const errors = this.validate();
     this.setState({ errors: errors || {} });
-    if (errors) return;
+    if (errors) {
+      console.error(errors);
+      return;
+    }
 
     this.doSubmit();
   };

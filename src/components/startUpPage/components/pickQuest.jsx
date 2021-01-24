@@ -1,7 +1,8 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import AddQuestForm from "./../../common/addQuestForm";
 
-const PickQuest = ({ onClickBegin }) => {
+const PickQuest = ({ onClick, skill }) => {
   return (
     <React.Fragment>
       <Modal.Title className="centered-modal">
@@ -9,14 +10,10 @@ const PickQuest = ({ onClickBegin }) => {
       </Modal.Title>
       <Modal.Body className="centered-modal">
         <p className="body-text">
-          Every day you may take one delberiate step to your mountain each day.
+          Every day you may take one deliberate step to your mountain each day.
           What is the daily habit that will be your step?
         </p>
-        <div className="button">
-          <Button variant="danger" onClick={() => onClickBegin()}>
-            Begin
-          </Button>
-        </div>
+        <AddQuestForm skill={skill} onClick={onClick}></AddQuestForm>
       </Modal.Body>
     </React.Fragment>
   );

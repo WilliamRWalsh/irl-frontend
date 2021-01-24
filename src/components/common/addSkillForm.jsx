@@ -6,10 +6,11 @@ import Joi from "joi-browser";
 import { createSkill } from "../../services/skillService";
 import ColorPicker from "./colorPicker";
 import "./addSkillForm.scss";
+import { getColorList } from "../../utils/color";
 
 class AddSkillForm extends FormComponent {
   state = {
-    data: { name: "", color: "" },
+    data: { name: "", color: getColorList()[0] },
     errors: {},
   };
 
@@ -27,10 +28,10 @@ class AddSkillForm extends FormComponent {
   doSubmit = async e => {
     /* Called at the end of Form.handleSubmit */
     const { data } = this.state;
-    await createSkill(data);
+    const skill = await createSkill(data);
 
     /* Used only in startup modal atm */
-    this.props.onClick();
+    this.props.onClick(skill);
   };
 
   render() {

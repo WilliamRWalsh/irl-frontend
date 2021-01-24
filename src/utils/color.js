@@ -20,4 +20,19 @@ const getVariantColor = color => {
   }
 };
 
-module.exports = getVariantColor;
+const getColorList = () => {
+  return [
+    "#7fe5f0",
+    "#DB3E00",
+    "#FCCB00",
+    "#ff80ed",
+    "#00ff00",
+    "#1273DE",
+    "#ff00ff",
+  ];
+};
+
+module.exports = {
+  getColorList,
+  getVariantColor,
+};

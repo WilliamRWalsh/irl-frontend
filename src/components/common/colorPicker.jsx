@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { TwitterPicker } from "react-color";
+import { getColorList } from "../../utils/color";
 import "./colorPicker.scss";
 
 class ColorPicker extends Component {
@@ -11,15 +12,7 @@ class ColorPicker extends Component {
         <TwitterPicker
           className="color-picker"
           onChangeComplete={this.handleChangeComplete}
-          colors={[
-            "#7fe5f0",
-            "#DB3E00",
-            "#FCCB00",
-            "#ff80ed",
-            "#00ff00",
-            "#1273DE",
-            "#ff00ff",
-          ]}
+          colors={getColorList()}
         />
       );
   };

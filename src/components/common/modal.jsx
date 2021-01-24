@@ -4,7 +4,7 @@ import "./modal.scss";
 
 const CenteredModal = ({ children, show }) => {
   return (
-    <Modal show={show} size="md" centered className="model">
+    <Modal show={show} onHide={() => {}} size="md" centered className="model">
       {children}
     </Modal>
   );
