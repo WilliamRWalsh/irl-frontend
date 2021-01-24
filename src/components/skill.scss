@@ -12,4 +12,7 @@
   .no-transition .progress-bar {
     transition: none;
   }
+  .progress-bar {
+    background-color: var(--progress-bar-color);
+  }
 }

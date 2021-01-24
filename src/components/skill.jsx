@@ -11,6 +11,7 @@ class Skill extends Component {
   }
 
   render() {
+    const cssProperties = { "--progress-bar-color": this.props.skill.color };
     return (
       <div className="skill-bar">
         <p>
@@ -20,8 +21,11 @@ class Skill extends Component {
           {this.props.skill.name}
         </p>
         <ProgressBar
+          style={cssProperties}
           className={this.props.rollover ? "no-transition" : ""}
-          variant={getVariantColor(this.props.skill.color)}
+          // style={{ "background-color": this.props.skill.color }}
+          // variant={this.props.skill.color}
+          // style={{ "background-color": this.props.skill.color }}
           now={this.getBarPercentage()}
         />
       </div>

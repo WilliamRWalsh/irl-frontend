@@ -77,9 +77,7 @@ class Dashboard extends Component {
             </Col>
             <Col xs={2}></Col>
           </Row>
-          <Row>
-            <StartUp></StartUp>
-          </Row>
+          <Row>{/* <StartUp></StartUp> */}</Row>
         </Container>
       </div>
     );
