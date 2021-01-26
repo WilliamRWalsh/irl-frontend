@@ -12,10 +12,14 @@ class Dashboard extends Component {
   state = {};
 
   async componentDidMount() {
+    this.refreshState();
+  }
+
+  refreshState = async () => {
     const quests = await getAllUsersQuests();
     const skills = await getAllUsersSkills();
     this.setState({ quests, skills });
-  }
+  };
 
   // TODO: How can I pull this out to a service?
   handleCompleted = quest => {
@@ -77,7 +81,7 @@ class Dashboard extends Component {
             </Col>
             <Col xs={2}></Col>
           </Row>
-          <Row>{/* <StartUp></StartUp> */}</Row>
+          <Row>{<StartUp onComplete={this.refreshState} />}</Row>
         </Container>
       </div>
     );

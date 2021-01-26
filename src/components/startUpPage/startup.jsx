@@ -20,6 +20,7 @@ class StartUp extends Component {
     const step = this.state.step + 1;
     if (step == this.state.totalSteps) {
       this.setState({ isShowing: false });
+      this.props.onComplete();
       return;
     }
     this.setState({ step });
